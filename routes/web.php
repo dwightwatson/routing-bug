@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\{Campus, Category, University};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/{university}/{campus:slug}/categories/{category}', function (University $university, Campus $campus, Category $category) {
+    return $category;
 });
